@@ -29,16 +29,17 @@ public class PhotoDetailActivity extends BaseActivity {
         Intent intent = getIntent();
         Photo photo = (Photo) intent.getSerializableExtra(PHOTO_TRANSFER);
         if (photo != null){
+            TextView photoTitle = (TextView) findViewById(R.id.photo_title);
 
             Resources resources = getResources();
 
-            TextView photoTitle = (TextView) findViewById(R.id.photo_title);
-            photoTitle.setText(resources.getString(R.string.photo_title_text));
-//            photoTitle.setText("Title: "+photo.getTitle());
+            //            photoTitle.setText("Title: "+photo.getTitle());
+            photoTitle.setText(resources.getString(R.string.photo_title_text, photo.getTitle()));
 
             TextView photoTags = (TextView) findViewById(R.id.photo_tags);
-            photoTags.setText(resources.getString(R.string.photo_title_text));
-//            photoTags.setText("Tags: "+photo.getTags());
+            //            photoTags.setText("Tags: "+photo.getTags());
+            photoTags.setText(resources.getString(R.string.photo_tags_text, photo.getTags()));
+
 
             TextView author = (TextView) findViewById(R.id.photo_author);
             author.setText(photo.getAuthor());

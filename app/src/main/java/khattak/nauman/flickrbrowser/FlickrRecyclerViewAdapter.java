@@ -34,7 +34,8 @@ class FlickrRecyclerViewAdapter extends RecyclerView.Adapter<FlickrRecyclerViewA
         return new FlickrImageViewHolder(view);
     }
 
-    //this method is called by the recycler view when it wants new data to be stored in a viewHolder so that it can display it
+    //this method is called by the recycler view when it wants new data to be stored in a viewHolder
+    // so that it can display it
     // or more precisely
     //called by the layout manager when it wants new data in an existing row
     @Override
@@ -70,8 +71,8 @@ class FlickrRecyclerViewAdapter extends RecyclerView.Adapter<FlickrRecyclerViewA
         public FlickrImageViewHolder(View itemView) {
             super(itemView);
             Log.d(TAG, "FlickrImageViewHolder: inside Construcotr");
-            this.imageThumbnail = (ImageView) itemView.findViewById(R.id.imageThumbnail);
-            this.title = (TextView) itemView.findViewById(R.id.title);
+            this.imageThumbnail = itemView.findViewById(R.id.imageThumbnail);
+            this.title = itemView.findViewById(R.id.title);
         }
     }
 }
